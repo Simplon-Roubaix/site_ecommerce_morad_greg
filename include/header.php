@@ -33,7 +33,7 @@
       <a class="nav-link" href="#">ACCUEIL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">NOS VEHICULE</a>
+      <a class="nav-link" href="#">NOS VEHICULES</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">FINANCEMENT</a>
