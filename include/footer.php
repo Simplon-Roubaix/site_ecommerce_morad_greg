@@ -1,3 +1,20 @@
+
+
+
+<!--Footer-->
+<footer class="page-footer  accent-4 center-on-small-only">
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © 2017 Copyright: <label><strong> GREG ET MORAD , Simplon.co</strong> </label>
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
 <!-- ############## JS sources ############## -->
   <script src="js/jquery-3.2.1.js"></script>
   <script src="js/plugins.js"></script>
