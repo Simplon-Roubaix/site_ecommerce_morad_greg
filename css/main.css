@@ -1,0 +1,23 @@
+
+/*general part*/
+body {
+  background-image: url(../img/Lamborghini.jpg);
+ background-size: cover;
+ width: 100%;
+}
+
+/* header part */
+
+#block-logo , ul{
+  background-color: rgb(41,43,44);
+  opacity: 0.7;
+}
+header a {
+  color: rgb(216,206,96);
+}
+
+/*card part */
+.card-deck{
+  border: 1px solid white;
+  color: white;
+}
