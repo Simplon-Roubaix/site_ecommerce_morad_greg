@@ -1,5 +1,13 @@
 <?php
 include('include/header.php');
-include('include/manager.php');
-include('include/footer.php');
 ?>
+<div class="container">
+  <div class="row">
+    <?php
+    include 'include/manager.php';
+    ?>
+  </div>
+</div>
+<?php
+  include 'include/footer.php';
+  ?>
