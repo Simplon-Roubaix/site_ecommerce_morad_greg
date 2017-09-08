@@ -48,7 +48,7 @@ footer {
   margin: 2vh auto;
 }
 
-.display_details h2, .display_details h3 {
+.display_details h2, .display_details h3, .card-block {
   font-family: 'Forum';
 }
 .display_details h2 {
