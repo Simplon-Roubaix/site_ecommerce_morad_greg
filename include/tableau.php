@@ -1,2 +1,2 @@
-<?php $tableau = ["titre" => "May Bach Luxury", "favicon" => "img/may-bach-logo.png"];
+<?php $tableau = ["titre" => "May Bach Luxury", "favicon" => "img/favicon.png", "author" => "Morad et Greg"];
 ?>
