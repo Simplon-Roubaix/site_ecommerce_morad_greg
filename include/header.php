@@ -4,11 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title><?php include('tableau.php');
+    echo $tableau['titre'];
+  ?></title>
+  <meta name="author" content="<?php $tableau['author']; ?>">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="favicon.png">
+  <link rel="icon" href="<?php echo $tableau['favicon']?>">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -30,7 +33,7 @@
       <a class="nav-link" href="#">ACCUEIL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">NOS VEHICULE</a>
+      <a class="nav-link" href="#">NOS VEHICULES</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">FINANCEMENT</a>

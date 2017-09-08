@@ -14,7 +14,8 @@
           <p class="card-text"><?php echo $voiture['type']; ?></p>
           <form method="post" style="width: 20rem;">
             <input type="hidden" name="id[]" value="<?php echo $id_voiture ?>">
-            <input id="buttoncard" type="submit" name="submit" value="details" class="btn btn">
+
+            <input id="buttoncard" type="submit" name="submit" value="Détails" class="btn btn">
           </form>
       </div>
   </div>
