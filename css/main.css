@@ -1,7 +1,7 @@
 
 /*general part*/
 body {
-  background-image: url(../img/Lamborghini.jpg);
+  background-color: rgb(19, 18, 0);
  background-size: cover;
  width: 100%;
 }
@@ -18,6 +18,10 @@ header a {
 
 /*card part */
 .card-deck{
-  border: 1px solid white;
+  border: 4px solid rgb(216,206,96);
   color: white;
+  border-radius: 4px;
+}
+#buttoncard {
+  background: rgb(141, 131, 23);
 }
