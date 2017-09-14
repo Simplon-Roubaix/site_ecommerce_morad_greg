@@ -2,8 +2,8 @@
   include 'db/dbconnect.php';
   $req_general = $bdd->query('SELECT * FROM infos_site');
   $general = $req_general->fetch();
-  $reqimg = $bdd->query('SELECT source FROM images WHERE id = \''. $general['favicon'] .'\'');
-  $imgfav = $reqimg->fetch();
+  $reqimg = $bdd->query('SELECT source FROM images WHERE id_i = \''. $general['favicon'] .'\' OR id_i = \''. $general['logo'] .'\'');
+  $img_gen = $reqimg->fetchAll();
 ?>
 
 <!doctype html>
@@ -12,14 +12,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title><?php include('tableau.php');
-    echo $general['titre'];
-  ?></title>
+  <title><?php echo $general['titre']; ?></title>
   <meta name="author" content="<?php $general['auteur']; ?>">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="<?php echo substr($imgfav['source'], 3)?>">
+  <link rel="icon" href="<?php echo substr($img_gen[1]['source'], 3); ?>">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -31,7 +29,7 @@
 <body>
   <header class="">
     <div class="row" id="block-logo">
-      <img class="col-lg-3 col-md-3 rounded mx-auto d-block " src="img/may-bach-logo.png" alt="logo">
+      <img class="col-lg-3 col-md-3 rounded mx-auto d-block " src="<?php echo substr($img_gen[0]['source'], 3); ?>" alt="logo">
 
     </div>
 
