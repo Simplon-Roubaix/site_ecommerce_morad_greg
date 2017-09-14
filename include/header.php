@@ -1,3 +1,11 @@
+<?php
+  include 'db/dbconnect.php';
+  $req_general = $bdd->query('SELECT * FROM infos_site');
+  $general = $req_general->fetch();
+  $reqimg = $bdd->query('SELECT source FROM images WHERE id = \''. $general['favicon'] .'\'');
+  $imgfav = $reqimg->fetch();
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -5,13 +13,13 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title><?php include('tableau.php');
-    echo $tableau['titre'];
+    echo $general['titre'];
   ?></title>
-  <meta name="author" content="<?php $tableau['author']; ?>">
+  <meta name="author" content="<?php $general['auteur']; ?>">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="<?php echo $tableau['favicon']?>">
+  <link rel="icon" href="<?php echo substr($imgfav['source'], 3)?>">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
