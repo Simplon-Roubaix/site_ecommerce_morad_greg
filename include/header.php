@@ -36,7 +36,7 @@
     <ul class="nav nav-tabs bg-inverse">
 
     <li class="nav-item">
-      <a class="nav-link" href="#">ACCUEIL</a>
+      <a class="nav-link" href="../index.php">ACCUEIL</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">NOS VEHICULES</a>
@@ -46,6 +46,9 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">CONTACT</a>
+    </li>
+    <li class="nav-item">
+      <a href='include/sign.php' class="nav-link" href="#">CONNECTER</a>
     </li>
 
   </ul>
