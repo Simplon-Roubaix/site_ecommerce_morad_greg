@@ -23,7 +23,7 @@ function exists($bdd) {
 }
 
   if (isset($_POST['operation']) AND $_POST['operation'] == 1) {
-      if (isset($_POST['marque_v']) and isset($_POST['modele_v']) and isset($_POST['descriptif_v']) and isset($_POST['altimg'])) {
+      if (isset($_POST['marque_v']) AND isset($_POST['modele_v']) AND isset($_POST['descriptif_v'])) {
           $arr_post[] = $_POST['marque_v'];
           $arr_post[] = $_POST['modele_v'];
           $arr_post[] = $_POST['descriptif_v'];
@@ -56,7 +56,6 @@ function exists($bdd) {
       } else {
           $err_count++;
       }
-
       if ($err_count == 0) {
           $req_v = $bdd->prepare('INSERT INTO vehicules(marque, model, descriptif, annee, prix_de_vente)
                             VALUES(:marque, :model, :descriptif, :annee, :prixv)');
@@ -64,7 +63,7 @@ function exists($bdd) {
                           'model' => $arr_post[1],
                           'descriptif' => $arr_post[2],
                           'annee' => $arr_post[3],
-                          'prixv' => $arr_post[4]));
+                          'prixv' => intval($arr_post[4])));
 
           $req_idv = $bdd->query('SELECT MAX(id_v) FROM vehicules');
           $max_idv = $req_idv->fetch();
@@ -112,15 +111,18 @@ function exists($bdd) {
     header('Location: modif_vehicule.php?id='.$id_v);
   }
   elseif (isset($_POST['operation']) AND $_POST['operation'] == 3) {
-    echo 'test';
+
     if(exists($bdd)) {
-      echo 'tu dois passer ici';
       $id_v = exists($bdd);
-      var_dump($id_v);
       $req_del = $bdd->prepare('DELETE FROM vehicules WHERE id_v = :id_v');
       $req_del->execute(array('id_v' => $id_v));
+
+      $reqimg = $bdd->query('SELECT * FROM images WHERE id_v = \'' . $id_v . '\'');
+      $img = $reqimg->fetch();
+      unlink($img['source']);
 
       $req_del = $bdd->prepare('DELETE FROM images WHERE id_v = :id_v');
       $req_del->execute(array('id_v' => $id_v));
     }
+    header('Location: admin.php');
   }
