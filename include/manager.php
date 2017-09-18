@@ -1,12 +1,14 @@
 <?php
-include 'include/voiture.php';
+include '../db/dbconnect.php';
 
 if(isset($_POST['id'])) {
-  include('include/details.php');
+  include('details.php');
 }
 else {
-  foreach($voitures as $id_voiture => $voiture) {
-      include('include/carte.php');
+  $display_cards = $bdd->query('SELECT * FROM vehicules') or die(print_r($bdd->errorInfo()));
+  $voitures = $display_cards->fetchAll();
+  foreach($voitures as $voiture) {
+      include('carte.php');
   }
 }
 ?>
