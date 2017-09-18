@@ -11,7 +11,7 @@ AND !empty($_POST['login'] ) AND !empty($_POST['pass'])) {
   $pass = sha1(htmlspecialchars($_POST['pass']));
 
   //apel bdd utilisateur?
-  $query=$db->prepare('SELECT *
+  $query=$bdd->prepare('SELECT *
     FROM table_utilisateurs WHERE login = :login AND password = :pass');
 
   $query->bindValue(':login',$login, PDO::PARAM_STR);
@@ -22,7 +22,7 @@ AND !empty($_POST['login'] ) AND !empty($_POST['pass'])) {
   if($data) {
     //redirige
 
-     header("Location:admin.php");
+     header("Location: admin.php");
   } else {
     //genere message erreur user mdp non compatible
 
@@ -31,7 +31,7 @@ AND !empty($_POST['login'] ) AND !empty($_POST['pass'])) {
 
 $_SESSION['erreur']= '<div class="alert alert-danger" role="alert"><p>Une erreur s\'est produite
     pendant votre identification.<br /> Le mot de passe ou le pseudo
-          entré n\'est pas correcte.</p><p>Cliquez <a href="Sign.php">ici</a>
+          entré n\'est pas correct.</p><p>Cliquez <a href="Sign.php">ici</a>
     pour revenir à la page précédente
     <br /><br />Cliquez <a href="../index.php">ici</a>
     pour revenir à la page d accueil</p></div>';

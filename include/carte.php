@@ -2,7 +2,7 @@
 <div class="col-lg-4 ">
   <div class="card-deck mx-auto m-4" style="width:350px">
       <?php
-        $req_img = $bdd->query('SELECT source, alt FROM images WHERE idvehicule = \'' . $voiture['id_v'] . '\'');
+        $req_img = $bdd->query('SELECT source, alt FROM images WHERE id_v = \'' . $voiture['id_v'] . '\'');
         $img = $req_img->fetch();
       ?>
       <!--Card image-->
