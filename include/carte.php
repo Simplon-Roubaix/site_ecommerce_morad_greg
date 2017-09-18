@@ -6,7 +6,7 @@
         $img = $req_img->fetch();
       ?>
       <!--Card image-->
-      <img class="card-img-top mx-auto mt-1" style="width: 20rem;" src="<?php echo substr($img['source'], 3); ?>" alt="<?php echo $img['alt']; ?>">
+      <img class="card-img-top mx-auto mt-1" style="width: 20rem;" src="<?php echo $img['source']; ?>" alt="<?php echo $img['alt']; ?>">
       <?php
         $req_img->closeCursor();
       ?>

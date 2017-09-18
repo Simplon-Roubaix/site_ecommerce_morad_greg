@@ -1,5 +1,5 @@
 <?php
-  include 'db/dbconnect.php';
+  include '../db/dbconnect.php';
   $req_general = $bdd->query('SELECT * FROM infos_site');
   $general = $req_general->fetch();
   $reqimg = $bdd->query('SELECT source FROM images WHERE id_i = \''. $general['favicon'] .'\' OR id_i = \''. $general['logo'] .'\'');
@@ -17,19 +17,19 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="<?php echo substr($img_gen[1]['source'], 3); ?>">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="icon" href="<?php echo $img_gen[1]['source']; ?>">
+  <link rel="stylesheet" href="../css/bootstrap.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css" />
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
   <header class="">
     <div class="row" id="block-logo">
-      <img class="col-lg-3 col-md-3 rounded mx-auto d-block " src="<?php echo substr($img_gen[0]['source'], 3); ?>" alt="logo">
+      <img class="col-lg-3 col-md-3 rounded mx-auto d-block " src="<?php echo $img_gen[0]['source']; ?>" alt="logo">
 
     </div>
 
@@ -48,7 +48,7 @@
       <a class="nav-link" href="#">CONTACT</a>
     </li>
     <li class="nav-item">
-      <a href='include/sign.php' class="nav-link" href="#">CONNECTER</a>
+      <a href='sign.php' class="nav-link" href="#">CONNECTER</a>
     </li>
 
   </ul>

@@ -1,11 +1,11 @@
 <?php
 session_start();
-$db =  new PDO ('mysql:host=localhost;dbname=ecommerce_binome', 'root', 'zekri59100');
+include '../db/dbconnect.php';
 
 //verif
 if (isset($_POST['login'] ) AND isset($_POST['pass'])
 AND !empty($_POST['login'] ) AND !empty($_POST['pass'])) {
-  echo 'champs respecté';
+  echo 'champs respectés';
   //securise
   $login = htmlspecialchars($_POST['login']);
   $pass = sha1(htmlspecialchars($_POST['pass']));
