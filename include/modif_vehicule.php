@@ -73,15 +73,17 @@
       </div> -->
 
       <input type="hidden" name="operation" value="2">
-
+      <input type="hidden" name="idv" value="<?php echo $id_v; ?>">
       <button class="btn btn-lg btn-primary btn-block" type="submit">Modifier</button>
 
       </form>
 
       <form action="admin_post.php" method="post">
         <input type="hidden" name="operation" value="3">
-        <input type="submit" name="suppr" value="Supprimer">
+        <input type="hidden" name="idv" value="<?php echo $id_v; ?>">
+        <input class="btn btn-lg btn-primary btn-block" type="submit" name="suppr" value="Supprimer">
       </form>
+      <a href="admin.php" class="btn btn-lg btn-primary btn-block">Retour</a>
 
     <?php
     }

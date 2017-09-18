@@ -48,12 +48,12 @@ include '../db/dbconnect.php';
    </div>
  </div>
 
- <div class="form-group row">
+ <!-- <div class="form-group row">
    <label for="descimg" class="col-2 col-form-label">Image Alt</label>
    <div class="col-10">
      <input class="form-control" type="text" name="altimg" placeholder="Alt" id="descimg" required>
    </div>
- </div>
+ </div> -->
  <input type="hidden" name="operation" value="1">
  <button class="btn btn-lg btn-primary btn-block" type="submit">Enregistrer</button>
 
