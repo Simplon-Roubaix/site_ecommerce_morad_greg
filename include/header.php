@@ -30,7 +30,7 @@
   <header class="">
     <div class="row" id="block-logo">
       <img class="col-lg-3 col-md-3 rounded mx-auto d-block " src="<?php echo $img_gen[0]['source']; ?>" alt="logo">
-
+<?php $reqimg->closeCursor(); ?>
     </div>
 
     <ul class="nav nav-tabs bg-inverse">

@@ -10,5 +10,6 @@ else {
   foreach($voitures as $voiture) {
       include('carte.php');
   }
+  $display_cards->closeCursor();
 }
 ?>
