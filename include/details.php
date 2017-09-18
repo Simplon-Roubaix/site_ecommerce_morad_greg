@@ -1,7 +1,7 @@
 <?php
 $display_details = $bdd->query('SELECT * FROM vehicules WHERE id_v = \'' . $_POST['id'][0] . '\'') or die(print_r($bdd->errorInfo()));
 $voiture = $display_details->fetch();
-$details_img = $bdd->query('SELECT source, alt FROM images WHERE idvehicule = \'' . $_POST['id'][0] . '\'') or die(print_r($bdd->errorInfo()));
+$details_img = $bdd->query('SELECT source, alt FROM images WHERE id_v = \'' . $_POST['id'][0] . '\'') or die(print_r($bdd->errorInfo()));
 $image = $details_img->fetch();
 ?>
   <div class="display_details">
