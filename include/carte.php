@@ -1,16 +1,9 @@
 
 <div class="col-lg-4 ">
   <div class="card-deck mx-auto m-4" style="width:350px">
-      <?php
-        $req_img = $bdd->query('SELECT source, alt FROM images WHERE id_v = \'' . $voiture['id_v'] . '\'');
-        $img = $req_img->fetch();
-      ?>
       <!--Card image-->
-      <img class="card-img-top mx-auto mt-1" style="width: 20rem;" src="<?php echo $img['source']; ?>" alt="<?php echo $img['alt']; ?>">
-      <?php
-        $req_img->closeCursor();
-      ?>
-      <!--Card content-->
+      <img class="card-img-top mx-auto mt-1" style="width: 20rem;" src="<?php echo $voiture['source']; ?>" alt="<?php echo $voiture['alt']; ?>">
+            <!--Card content-->
       <div class="card-block">
           <!--Title-->
           <h4 class="card-title"><?php echo $voiture['marque']; ?></h4>
