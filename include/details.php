@@ -1,5 +1,6 @@
 <?php
 
+// selects content of vehicules and images tables depending on sent id
 $display_details = $bdd->query('SELECT * FROM vehicules INNER JOIN images ON vehicules.id_v = images.id_v WHERE vehicules.id_v = \'' . $_POST['id'][0] . '\'');
 $voiture = $display_details->fetch();
 
