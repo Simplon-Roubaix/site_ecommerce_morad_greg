@@ -52,26 +52,6 @@
         </div>
       </div>
 
-      <?php
-      /*$reqimg = $bdd->query('SELECT * FROM images WHERE WHERE id_v = \'' . $id_v . '\'') or die(print_r($bdd->errorInfo()));
-      $imgres = $reqimg->fetchAll();
-      $lastimg = $imgres[count($imgres)-1];*/
-      ?>
-
-      <!-- <div class="form-group row">
-        <label for="imgfile" class="col-2 col-form-label">Image</label>
-        <div class="col-10">
-          <input class="form-control" type="file" name="imgfile" id="imgfile" required>
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <label for="descimg" class="col-2 col-form-label">Image Alt</label>
-        <div class="col-10">
-          <input class="form-control" type="text" name="altimg" value="<?php //echo $lastimg['alt']; ?>" placeholder="Alt" id="descimg" required>
-        </div>
-      </div> -->
-
       <input type="hidden" name="operation" value="2">
       <input type="hidden" name="idv" value="<?php echo $id_v; ?>">
       <button class="btn btn-lg btn-primary btn-block" type="submit">Modifier</button>
