@@ -48,12 +48,6 @@ include '../db/dbconnect.php';
    </div>
  </div>
 
- <!-- <div class="form-group row">
-   <label for="descimg" class="col-2 col-form-label">Image Alt</label>
-   <div class="col-10">
-     <input class="form-control" type="text" name="altimg" placeholder="Alt" id="descimg" required>
-   </div>
- </div> -->
  <input type="hidden" name="operation" value="1">
  <button class="btn btn-lg btn-primary btn-block" type="submit">Enregistrer</button>
 
@@ -66,6 +60,7 @@ include '../db/dbconnect.php';
   <?php
   $req_list = $bdd->query('SELECT id_v, marque, model FROM vehicules');
   $vehicules = $req_list->fetchAll();
+  // displays all existing products
   foreach ($vehicules as $vehicule) {
   ?>
   <a href="modif_vehicule.php?id=<?php echo $vehicule['id_v']?>" class="list-group-item list-group-item-action">

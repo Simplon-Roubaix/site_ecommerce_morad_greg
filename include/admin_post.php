@@ -3,7 +3,7 @@ include '../db/dbconnect.php';
   $err_count = 0;
 
 function exists($bdd) {
-
+//this function checks if the selected product exists in the database, else return false
   if(isset($_POST['idv'])){
     $idv = trim($_POST['idv']);
     $idv = strip_tags($idv);
@@ -22,7 +22,9 @@ function exists($bdd) {
   }
 }
 
+// checks if operation is adding a new product
   if (isset($_POST['operation']) AND $_POST['operation'] == 1) {
+    // checks if NOT NULL elements are set
       if (isset($_POST['marque_v']) AND isset($_POST['modele_v']) AND isset($_POST['descriptif_v'])) {
           $arr_post[] = $_POST['marque_v'];
           $arr_post[] = $_POST['modele_v'];
@@ -30,7 +32,7 @@ function exists($bdd) {
           $arr_post[] = $_POST['date_v'];
           $arr_post[] = $_POST['prix_v'];
           $arr_post[] = $arr_post[0].' '.$arr_post[1];
-
+          // 'cleaning' of posted elements
           foreach ($arr_post as $key => $value) {
               $value = trim($value);
               $value = strip_tags($value);
@@ -41,6 +43,7 @@ function exists($bdd) {
           $err_count++;
       }
 
+// adding image to img folder if doesn't exist
       if (isset($_FILES['imgfile']) AND $_FILES['imgfile']['error'] == 0) {
           if ($_FILES['imgfile']['size'] <= 12800000) {
               $infosfichier = pathinfo($_FILES['imgfile']['name']);
@@ -56,6 +59,7 @@ function exists($bdd) {
       } else {
           $err_count++;
       }
+      // if no errors where encountered add entries in vehicules and images tables
       if ($err_count == 0) {
           $req_v = $bdd->prepare('INSERT INTO vehicules(marque, model, descriptif, annee, prix_de_vente)
                             VALUES(:marque, :model, :descriptif, :annee, :prixv)');
@@ -64,7 +68,7 @@ function exists($bdd) {
                           'descriptif' => $arr_post[2],
                           'annee' => $arr_post[3],
                           'prixv' => intval($arr_post[4])));
-
+          // gets the last id in vehicules table
           $req_idv = $bdd->query('SELECT MAX(id_v) FROM vehicules');
           $max_idv = $req_idv->fetch();
 
@@ -75,6 +79,7 @@ function exists($bdd) {
       }
       header('Location: admin.php');
   }
+  // checks if operation is modification of a product
   elseif (isset($_POST['operation']) AND $_POST['operation'] == 2) {
     if (isset($_POST['marque_v']) AND isset($_POST['modele_v']) AND isset($_POST['descriptif_v'])) {
 
@@ -83,7 +88,7 @@ function exists($bdd) {
         $arr_post[] = $_POST['descriptif_v'];
         $arr_post[] = $_POST['date_v'];
         $arr_post[] = $_POST['prix_v'];
-
+        // cleaning of posted entries
         foreach ($arr_post as $key => $value) {
             $value = trim($value);
             $value = strip_tags($value);
@@ -93,7 +98,7 @@ function exists($bdd) {
     } else {
         $err_count++;
     }
-
+    // if no errors, modifies the product
     if($err_count == 0 AND exists($bdd)) {
       $id_v = exists($bdd);
       $req_up = $bdd->prepare('UPDATE vehicules SET marque = :marque, model = :model,
@@ -110,6 +115,7 @@ function exists($bdd) {
     }
     header('Location: modif_vehicule.php?id='.$id_v);
   }
+  // checks if operation is deletion of product
   elseif (isset($_POST['operation']) AND $_POST['operation'] == 3) {
 
     if(exists($bdd)) {
@@ -119,6 +125,7 @@ function exists($bdd) {
 
       $reqimg = $bdd->query('SELECT * FROM images WHERE id_v = \'' . $id_v . '\'');
       $img = $reqimg->fetch();
+      // also removes the file from img folder
       unlink($img['source']);
 
       $req_del = $bdd->prepare('DELETE FROM images WHERE id_v = :id_v');
