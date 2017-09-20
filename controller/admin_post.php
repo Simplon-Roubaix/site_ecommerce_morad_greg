@@ -15,7 +15,7 @@ include '../model/modifyproduct.php';
 
 // checks if operation is modification of a product
   elseif (isset($_POST['operation']) and $_POST['operation'] == 2) {
-    modifyproduct($_POST);
+    $id_v = modifyproduct($_POST);
     header('Location: modif_vehicule.php?id='.$id_v);
   }
   // checks if operation is deletion of product

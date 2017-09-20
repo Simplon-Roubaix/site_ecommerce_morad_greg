@@ -1,5 +1,5 @@
 <?php
-  include('header.php');
+  include('../vue/header.php');
 ?>
 
 
@@ -29,5 +29,5 @@
 ?>
 
 <?php
-  include ('footer.php');
+  include ('../vue/footer.php');
 ?>
