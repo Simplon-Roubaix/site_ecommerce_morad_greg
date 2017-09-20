@@ -1,5 +1,6 @@
 <?php
-  include '../db/dbconnect.php';
+require '../model/db/dbconnect.php';
+// goes in model
   $req_general = $bdd->query('SELECT * FROM infos_site');
   $general = $req_general->fetch();
   $reqimg = $bdd->query('SELECT source FROM images WHERE id_i = \''. $general['favicon'] .'\' OR id_i = \''. $general['logo'] .'\'');

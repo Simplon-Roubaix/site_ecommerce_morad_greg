@@ -1,13 +1,13 @@
 <?php
-include('header.php');
+include('../vue/header.php');
 ?>
 <div class="container">
   <div class="row">
     <?php
-    include 'manager.php';
+    include '../vue/manager.php';
     ?>
   </div>
 </div>
 <?php
-  include 'footer.php';
+  include '../vue/footer.php';
   ?>

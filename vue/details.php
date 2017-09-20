@@ -1,9 +1,11 @@
 <?php
 
 // selects content of vehicules and images tables depending on sent id
+// goes in model
+require '../model/queries.php';
 $display_details = $bdd->query('SELECT * FROM vehicules INNER JOIN images ON vehicules.id_v = images.id_v WHERE vehicules.id_v = \'' . $_POST['id'][0] . '\'');
 $voiture = $display_details->fetch();
-
+$voiture = req_inner_vehicules_img($_POST['id'][0]);
 ?>
   <div class="display_details">
     <h2><?php echo $voiture['marque']; ?></h2>

@@ -8,6 +8,7 @@ function exists($bdd) {
     $idv = trim($_POST['idv']);
     $idv = strip_tags($idv);
     $idv = htmlspecialchars($idv);
+    //goes in model
     $req_ex = $bdd->query('SELECT * FROM vehicules WHERE id_v = \'' . $idv . '\'');
     $res_exists = $req_ex->fetchAll();
     if(count($res_exists)) {
@@ -21,6 +22,9 @@ function exists($bdd) {
     return false;
   }
 }
+
+// break in 3 files
+
 
 // checks if operation is adding a new product
   if (isset($_POST['operation']) AND $_POST['operation'] == 1) {
@@ -61,6 +65,7 @@ function exists($bdd) {
       }
       // if no errors where encountered add entries in vehicules and images tables
       if ($err_count == 0) {
+        //goes in model
           $req_v = $bdd->prepare('INSERT INTO vehicules(marque, model, descriptif, annee, prix_de_vente)
                             VALUES(:marque, :model, :descriptif, :annee, :prixv)');
           $req_v->execute(array('marque' => $arr_post[0],
@@ -71,7 +76,7 @@ function exists($bdd) {
           // gets the last id in vehicules table
           $req_idv = $bdd->query('SELECT MAX(id_v) FROM vehicules');
           $max_idv = $req_idv->fetch();
-
+          //goes in model
           $req_img = $bdd->prepare('INSERT INTO images(id_v, source, alt) VALUES(:idv, :source, :alt)');
           $req_img->execute(array('idv' => $max_idv[0],
                             'source' => $imgsource,
@@ -101,6 +106,7 @@ function exists($bdd) {
     // if no errors, modifies the product
     if($err_count == 0 AND exists($bdd)) {
       $id_v = exists($bdd);
+      // goes in model
       $req_up = $bdd->prepare('UPDATE vehicules SET marque = :marque, model = :model,
                               descriptif = :descriptif, annee = :annee, prix_de_vente = :prix_v
                               WHERE id_v = :id_v');
@@ -120,6 +126,7 @@ function exists($bdd) {
 
     if(exists($bdd)) {
       $id_v = exists($bdd);
+      // goes in model
       $req_del = $bdd->prepare('DELETE FROM vehicules WHERE id_v = :id_v');
       $req_del->execute(array('id_v' => $id_v));
 
