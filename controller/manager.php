@@ -10,6 +10,5 @@ if (isset($_POST['id'])) {
     foreach ($voitures as $voiture) {
         include('../vue/carte.php');
     }
-    $display_cards->closeCursor();
 }
 ?>

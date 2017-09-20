@@ -1,10 +1,10 @@
 <?php
 require '../model/db/dbconnect.php';
-// goes in model
-  $req_general = $bdd->query('SELECT * FROM infos_site');
-  $general = $req_general->fetch();
-  $reqimg = $bdd->query('SELECT source FROM images WHERE id_i = \''. $general['favicon'] .'\' OR id_i = \''. $general['logo'] .'\'');
-  $img_gen = $reqimg->fetchAll();
+include '../model/headerqueries.php';
+
+$general = get_general();
+$img_gen = get_general_img($general);
+
 ?>
 
 <!doctype html>
@@ -31,7 +31,6 @@ require '../model/db/dbconnect.php';
   <header class="">
     <div class="row" id="block-logo">
       <img class="col-lg-3 col-md-3 rounded mx-auto d-block " src="<?php echo $img_gen[0]['source']; ?>" alt="logo">
-<?php $reqimg->closeCursor(); ?>
     </div>
 
     <ul class="nav nav-tabs bg-inverse">

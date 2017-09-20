@@ -4,7 +4,7 @@ include('../vue/header.php');
 <div class="container">
   <div class="row">
     <?php
-    include '../vue/manager.php';
+    include '../controller/manager.php';
     ?>
   </div>
 </div>
