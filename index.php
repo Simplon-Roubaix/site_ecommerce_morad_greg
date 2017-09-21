@@ -1,3 +1,3 @@
 <?php
-  header('Location: vue/accueil.php');
+  header('Location: controller/accueil.php');
 ?>

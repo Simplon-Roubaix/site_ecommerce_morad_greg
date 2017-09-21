@@ -2,8 +2,9 @@
 
 function req_select($table) {
   global $bdd;
-  $req = $bdd->prepare('SELECT * FROM :table');
-  $req->execute(array('table' => $table));
+
+  $req = $bdd->query('SELECT * FROM '.$table);
+  // $req->execute(array('tab' => $table));
   return $req;
 }
 

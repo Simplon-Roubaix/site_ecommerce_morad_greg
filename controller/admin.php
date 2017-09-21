@@ -1,6 +1,7 @@
 <?php
-include('../vue/header.php');
 require '../model/db/dbconnect.php';
+include '../model/selectqueries.php';
+include '../vue/header.php';
 include '../vue/adminvue.php';
 
   $req_list = req_select('vehicules');
