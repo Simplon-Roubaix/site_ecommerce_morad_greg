@@ -1,5 +1,5 @@
 <?php
-//require_once 'db/dbconnect.php';
+
 function addproduct($arr_post, $imgsource)
 {
     $bdd = connectdb();
