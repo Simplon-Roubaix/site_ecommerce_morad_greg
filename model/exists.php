@@ -1,7 +1,8 @@
 <?php function exists($idv)
 {
     //this function checks if the selected product exists in the database, else return false
-    global $bdd;
+    $bdd = connectdb();
+    
     if (isset($idv)) {
         $idv = trim($idv);
         $idv = strip_tags($idv);

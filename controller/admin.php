@@ -1,7 +1,6 @@
 <?php
-require '../model/db/dbconnect.php';
-include '../model/selectqueries.php';
-include '../vue/header.php';
+include '../model/data.php';
+include '../vue/template/header.php';
 include '../vue/adminvue.php';
 
   $req_list = req_select('vehicules');
@@ -17,5 +16,5 @@ include '../vue/adminvue.php';
 </div>
 
 <?php
-include('../vue/footer.php');
+include('../vue/template/footer.php');
  ?>

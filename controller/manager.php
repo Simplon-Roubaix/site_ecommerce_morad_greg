@@ -1,5 +1,4 @@
 <?php
-require '../model/detailsqueries.php';
 
 // displays details or all cards depending on what is sent or not
 if (isset($_POST['id'])) {

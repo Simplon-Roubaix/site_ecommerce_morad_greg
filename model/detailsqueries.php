@@ -2,7 +2,8 @@
 
 function req_inner_vehicules_img($id = NULL)
 {
-    global $bdd;
+    $bdd = connectdb();
+    
     if ($id !== NULL) {
       $id = ' WHERE vehicules.id_v = \'' . $id . '\'';
     }

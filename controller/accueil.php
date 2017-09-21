@@ -1,7 +1,6 @@
 <?php
-require '../model/db/dbconnect.php';
-include '../model/selectqueries.php';
-include '../vue/header.php';
+include '../model/data.php';
+include '../vue/template/header.php';
 ?>
 <div class="container">
   <div class="row">
@@ -11,5 +10,5 @@ include '../vue/header.php';
   </div>
 </div>
 <?php
-  include '../vue/footer.php';
+  include '../vue/template/footer.php';
   ?>
