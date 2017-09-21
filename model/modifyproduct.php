@@ -35,7 +35,7 @@ function modifyproduct($sentarr)
                 'model' => $arr_post[1],
                 'descriptif' => $arr_post[2],
                 'annee' => $arr_post[3],
-                'prix_v' => $arr_post[4]));
+                'prix_v' => intval($arr_post[4])));
     }
     return $id_v;
 }

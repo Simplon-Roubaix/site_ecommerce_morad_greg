@@ -3,8 +3,7 @@ include('../vue/header.php');
 require '../model/db/dbconnect.php';
 include '../vue/adminvue.php';
 
-  //goes in model
-  $req_list = $bdd->query('SELECT id_v, marque, model FROM vehicules');
+  $req_list = req_select('vehicules');
   $vehicules = $req_list->fetchAll();
   // displays all existing products
   foreach ($vehicules as $vehicule) {

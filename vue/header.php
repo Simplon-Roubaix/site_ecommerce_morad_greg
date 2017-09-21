@@ -2,7 +2,8 @@
 require '../model/db/dbconnect.php';
 include '../model/headerqueries.php';
 
-$general = get_general();
+$req_general = req_select('infos_site');
+$general = $req_general->fetch();
 $img_gen = get_general_img($general);
 
 ?>

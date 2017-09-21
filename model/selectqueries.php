@@ -1,10 +1,10 @@
 <?php
 
-function get_general() {
+function req_select($table) {
   global $bdd;
-  $req_general = $bdd->query('SELECT * FROM infos_site');
-  $general = $req_general->fetch();
-  return $general;
+  $req = $bdd->prepare('SELECT * FROM :table');
+  $req->execute(array('table' => $table));
+  return $req;
 }
 
 function get_general_img($general) {
