@@ -4,8 +4,9 @@ function deleteproduct($id_v)
 {
     $bdd = connectdb();
 
-    $reqimg = req_select('images', $idv);
+    $reqimg = req_select('images', $id_v);
     $img = $reqimg->fetch();
+// var_dump($img);
     // also removes the file from img folder
     unlink($img['source']);
 

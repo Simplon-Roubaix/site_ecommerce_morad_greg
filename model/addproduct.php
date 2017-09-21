@@ -1,9 +1,9 @@
 <?php
-require_once 'db/dbconnect.php';
+//require_once 'db/dbconnect.php';
 function addproduct($arr_post, $imgsource)
 {
     $bdd = connectdb();
-    var_dump($arr_post);
+
     $req_v = $bdd->prepare('INSERT INTO vehicules(marque, model, descriptif, annee, prix_de_vente)
                         VALUES(:marque, :model, :descriptif, :annee, :prixv)');
     $req_v->execute(array('marque' => $arr_post[0],
