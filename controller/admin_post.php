@@ -13,12 +13,13 @@ require_once '../model/data.php';
           $arr_post[] = $_POST['prix_v'];
           $arr_post[] = $arr_post[0].' '.$arr_post[1];
           // 'cleaning' of posted elements
-          foreach ($arr_post as $key => $value) {
-              $value = trim($value);
-              $value = strip_tags($value);
-              $value = htmlspecialchars($value);
-              $arr_post[$key] = $value;
-          }
+          // foreach ($arr_post as $key => $value) {
+          //     $value = trim($value);
+          //     $value = strip_tags($value);
+          //     $value = htmlspecialchars($value);
+          //     $arr_post[$key] = $value;
+          // }
+          $arr_post = sanitize($arr_post);
       } else {
           $err_count++;
       }
@@ -57,12 +58,7 @@ require_once '../model/data.php';
           $arr_post[] = $_POST['date_v'];
           $arr_post[] = $_POST['prix_v'];
           // cleaning of posted entries
-          foreach ($arr_post as $key => $value) {
-              $value = trim($value);
-              $value = strip_tags($value);
-              $value = htmlspecialchars($value);
-              $arr_post[$key] = $value;
-          }
+          $arr_post = sanitize($arr_post);
       } else {
           $err_count++;
       }

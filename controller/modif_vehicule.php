@@ -1,11 +1,16 @@
 <?php
   require_once '../model/data.php';
+
+  $req_general = req_select('infos_site');
+  $general = $req_general->fetch();
+  $img_gen = get_general_img($general);
+
   include '../vue/template/header.php';
 ?>
 
 
 <?php
-
+if (isset($_SESSION['user']) && isset($_SESSION['droits']) && $_SESSION['droits'] == 1) {
   if(isset($_GET['id'])) {
     // cleans the id
     $id_v = trim($_GET['id']);
@@ -26,6 +31,10 @@
       header('Location: admin.php');
     }
   }
+}
+else {
+  header('Location: admin.php');
+}
 ?>
 
 <?php

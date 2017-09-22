@@ -1,3 +1,5 @@
+<h1 class="adminh">Admin connection</h1>
+
 <form action="adminconnect_post.php" method="post" class="adminform">
 <div class="form-group row">
   <label for="inputadmin"class="col-2 col-form-label">Admin user name :</label><br>

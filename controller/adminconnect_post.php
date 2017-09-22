@@ -6,12 +6,8 @@ if (isset($_POST['admin_name']) && isset($_POST['admin_pwd'])) {
   $arr_post[] = $_POST['admin_name'];
   $arr_post[] = $_POST['admin_pwd'];
 
-  foreach ($arr_post as $key => $value) {
-      $value = trim($value);
-      $value = strip_tags($value);
-      $value = htmlspecialchars($value);
-      $arr_post[$key] = $value;
-  }
+  $arr_post = sanitize($arr_post);
+
   $req = adminconnect($arr_post[0]);
   $res = $req->fetch();
   if ($res) {
