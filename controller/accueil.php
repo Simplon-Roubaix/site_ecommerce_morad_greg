@@ -1,5 +1,10 @@
 <?php
-include '../model/data.php';
+require_once '../model/data.php';
+
+$req_general = req_select('infos_site');
+$general = $req_general->fetch();
+$img_gen = get_general_img($general);
+
 include '../vue/template/header.php';
 ?>
 <div class="container">

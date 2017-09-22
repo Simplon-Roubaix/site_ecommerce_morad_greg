@@ -1,5 +1,5 @@
 <?php
-include '../model/data.php';
+require_once '../model/data.php';
 
   $err_count = 0;
 

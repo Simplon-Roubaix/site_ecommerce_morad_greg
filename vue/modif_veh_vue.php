@@ -1,5 +1,5 @@
-<h1>Modifier/supprimer un véhicule</h1>
-<form action="admin_post.php" method="post" enctype="multipart/form-data">
+<h1 class="adminh">Modifier/supprimer un véhicule</h1>
+<form action="admin_post.php" method="post" enctype="multipart/form-data" class="adminform">
 
 <div class="form-group row">
   <label for="marque" class="col-2 col-form-label">Marque</label>

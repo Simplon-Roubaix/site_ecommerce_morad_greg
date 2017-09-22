@@ -1,5 +1,9 @@
-<h1>Ajouter un véhicule</h1>
-<form action="admin_post.php" method="post" enctype="multipart/form-data">
+<form action="admin_disconnect_post.php" method="post">
+  <input type="submit" value="Disconnect">
+</form>
+
+<h1 class="adminh">Ajouter un véhicule</h1>
+<form action="admin_post.php" method="post" enctype="multipart/form-data" class="adminform">
 
 <div class="form-group row">
   <label for="marque" class="col-2 col-form-label">Marque</label>

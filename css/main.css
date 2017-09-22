@@ -59,6 +59,17 @@ footer {
   padding: 1vh 1vw
 }
 
+/* admin parts */
+
+form.adminform div {
+  margin: auto;
+  padding: 1vh 2vw;
+}
+
+.adminh, form.adminform div label, form.adminform div input.form-control {
+  color: rgb(186, 186, 186);
+}
+
 /*=========================
   Icons
  ================= */

@@ -1,10 +1,3 @@
-<?php
-$req_general = req_select('infos_site');
-$general = $req_general->fetch();
-$img_gen = get_general_img($general);
-
-?>
-
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -43,10 +36,10 @@ $img_gen = get_general_img($general);
       <a class="nav-link" href="#">FINANCEMENT</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">CONTACT</a>
+      <a class="nav-link" href="admin.php">CONTACT</a>
     </li>
     <li class="nav-item">
-      <a href='sign.php' class="nav-link" href="#">CONNECTER</a>
+      <a href='sign.php' class="nav-link" href="#">SE CONNECTER</a>
     </li>
 
   </ul>

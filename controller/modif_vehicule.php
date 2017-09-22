@@ -1,5 +1,5 @@
 <?php
-  require '../model/data.php';
+  require_once '../model/data.php';
   include '../vue/template/header.php';
 ?>
 

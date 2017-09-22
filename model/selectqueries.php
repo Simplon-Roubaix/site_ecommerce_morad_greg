@@ -18,4 +18,12 @@ function get_general_img($general) {
   return $img_gen;
 }
 
+function adminconnect($username) {
+  $bdd = connectdb();
+  $req = $bdd->prepare('SELECT * FROM table_utilisateurs WHERE login = :login');
+  $req->execute(array('login' => $username));
+  return $req;
+
+}
+
 ?>
