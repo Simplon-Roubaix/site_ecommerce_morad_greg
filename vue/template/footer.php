@@ -16,7 +16,6 @@
     <div class="footer-copyright">
         <div class="container-fluid">
             © 2017 Copyright: <label><strong> <?php echo strtoupper($general['auteur']); ?> , Simplon.co</strong> </label>
-<?php $req_general->closeCursor(); ?>
         </div>
     </div>
     <!--/.Copyright-->

@@ -1,3 +1,3 @@
 <?php
-  header('Location: include/accueil.php');
+  header('Location: controller/accueil.php');
 ?>

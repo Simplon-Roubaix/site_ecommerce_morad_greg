@@ -1,11 +1,3 @@
-<?php
-  include '../db/dbconnect.php';
-  $req_general = $bdd->query('SELECT * FROM infos_site');
-  $general = $req_general->fetch();
-  $reqimg = $bdd->query('SELECT source FROM images WHERE id_i = \''. $general['favicon'] .'\' OR id_i = \''. $general['logo'] .'\'');
-  $img_gen = $reqimg->fetchAll();
-?>
-
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -30,7 +22,6 @@
   <header class="">
     <div class="row" id="block-logo">
       <img class="col-lg-3 col-md-3 rounded mx-auto d-block " src="<?php echo $img_gen[0]['source']; ?>" alt="logo">
-<?php $reqimg->closeCursor(); ?>
     </div>
 
     <ul class="nav nav-tabs bg-inverse">
@@ -45,10 +36,10 @@
       <a class="nav-link" href="#">FINANCEMENT</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">CONTACT</a>
+      <a class="nav-link" href="admin.php">CONTACT</a>
     </li>
     <li class="nav-item">
-      <a href='sign.php' class="nav-link" href="#">CONNECTER</a>
+      <a href='sign.php' class="nav-link" href="#">SE CONNECTER</a>
     </li>
 
   </ul>
