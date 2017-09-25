@@ -9,4 +9,6 @@ include 'modifyproduct.php';
 include 'selectqueries.php';
 include 'sanitize.php';
 
+$erreurs = [];
+
  ?>
