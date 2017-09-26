@@ -66,6 +66,10 @@ form.adminform div {
   padding: 1vh 2vw;
 }
 
+.adminh {
+  margin: 1vh 2vw;
+}
+
 .adminh, form.adminform div label, form.adminform div input.form-control {
   color: rgb(186, 186, 186);
 }

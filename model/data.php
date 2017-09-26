@@ -7,5 +7,8 @@ include 'detailsqueries.php';
 include 'exists.php';
 include 'modifyproduct.php';
 include 'selectqueries.php';
+include 'sanitize.php';
+
+$erreurs = [];
 
  ?>
